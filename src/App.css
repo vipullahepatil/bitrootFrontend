@@ -1,38 +1,98 @@
-.App {
-  text-align: center;
+/* src/App.css */
+body {
+  margin: 0;
+  font-family: 'Lato', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.app {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.card {
+  border: 1px solid #ccc;
+  cursor: pointer;
+  transition: transform 0.2s, z-index 0.2s;
+  display: flex;
+  flex-direction: column; /* Set to column to arrange image and content */
+  background-color: white;
+  position: relative;
+  z-index: 1;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.card.selected {
+  transform: scale(1.1);
+  z-index: 2;
+}
+
+.card-image {
+  width: 100%; /* Take full width */
+  overflow: hidden;
+}
+
+.card-image img {
+  width: 100%;
+  height: auto;
+}
+
+.card-content {
+  flex: 1; /* Expand to take remaining space */
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.card-content h2 {
+  margin: 0;
+}
+
+.card-content p {
+  margin: 10px 0;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  z-index: 3;
+}
+
+.modal {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  position: relative;
+  width: 80%;
+  max-width: 800px;
+}
+
+.modal img {
+  width: 100%;
+  max-height: 400px;
+}
+
+.modal h2 {
+  margin-top: 0;
+}
+
+.modal button {
+  background-color: #007bff;
   color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+/* ... (rest of the styling) */

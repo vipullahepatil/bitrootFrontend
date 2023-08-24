@@ -1,23 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+// src/App.js
+import React, { useState } from 'react';
+import './App.css'; // Import your CSS file
+import posts from './data/posts';
+import Card from './components/Card';
+import Modal from './components/Modal';
 
 function App() {
+  const [selectedPost, setSelectedPost] = useState(null);
+
+  const openModal = (post) => {
+    setSelectedPost(post);
+  };
+
+  const closeModal = () => {
+    setSelectedPost(null);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      {posts.map((post) => (
+        <Card
+          key={post.id}
+          post={post}
+          onClick={() => openModal(post)}
+          isSelected={selectedPost === post}
+        />
+      ))}
+      {selectedPost && <Modal post={selectedPost} onClose={closeModal} />}
     </div>
   );
 }
