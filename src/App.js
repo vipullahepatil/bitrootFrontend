@@ -1,6 +1,5 @@
-// src/App.js
 import React, { useState } from 'react';
-import './App.css'; // Import your CSS file
+import './App.css';
 import posts from './data/posts';
 import Card from './components/Card';
 import Modal from './components/Modal';

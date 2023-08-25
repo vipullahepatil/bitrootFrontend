@@ -1,4 +1,3 @@
-/* src/App.css */
 body {
   margin: 0;
   font-family: 'Lato', sans-serif;
@@ -18,7 +17,7 @@ body {
   padding: 50px;
   transition: transform 0.2s, z-index 0.2s;
   display: flex;
-  flex-direction: column; /* Set to column to arrange image and content */
+  flex-direction: column;
   background-color: white;
   position: relative;
   z-index: 1;
@@ -30,7 +29,7 @@ body {
 }
 
 .card-image {
-  width: 100%; /* Take full width */
+  width: 100%;
   overflow: hidden;
 }
 
@@ -40,12 +39,12 @@ body {
 }
 
 .card-content {
-  flex: 1; /* Expand to take remaining space */
+  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding: 20px;
-  font-size:500%;
+  font-size: 500%;
 }
 
 .card-content h2 {
@@ -78,7 +77,6 @@ body {
   width: 50%;
   height: 75%;
   font-size: 300%;
-  /* max-width: 50%; */
 }
 
 .modal img {
@@ -90,7 +88,6 @@ body {
   margin-top: 0;
 }
 
-/* Add or modify styles for buttons */
 .modal button {
   background-color: #007bff;
   color: white;
@@ -99,21 +96,19 @@ body {
   border-radius: 5px;
   cursor: pointer;
   margin-top: 10px;
-  font-size: 50px; /* Adjust the font size as needed */
+  font-size: 50px;
 }
 
-/* You can adjust the font size for the modal content as well */
 .modal-content {
-  font-size: 18px; /* Adjust the font size for modal content */
-}
-/* Add a blur effect on card hover */
-.card:hover .card-image img {
-  filter: blur(5px); /* Adjust the blur intensity as needed */
+  font-size: 18px;
 }
 
-/* Show "Learn More" text on card hover */
+.card:hover .card-image img {
+  filter: blur(5px);
+}
+
 .card:hover::after {
-  content: "Learn More"; /* Text to display */
+  content: "Learn More";
   position: absolute;
   top: 50%;
   left: 50%;
@@ -124,18 +119,14 @@ body {
   font-size: 65px;
 }
 
-/* Hide the "Learn More" text by default */
 .card::after {
-  content: ""; /* Empty content */
-  opacity: 0; /* Start with no opacity */
-  visibility: hidden; /* Hide it initially */
+  content: "";
+  opacity: 0;
+  visibility: hidden;
   transition: opacity 0.2s, visibility 0.2s;
 }
 
 .card:hover::after {
-  opacity: 1; /* Display it on hover */
-  visibility: visible; /* Make it visible on hover */
+  opacity: 1;
+  visibility: visible;
 }
-
-
-
